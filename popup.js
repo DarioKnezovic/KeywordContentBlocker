@@ -15,13 +15,28 @@ function displayKeywords() {
     chrome.storage.sync.get("keywords", ({ keywords }) => {
         const keywordList = document.getElementById("keywordList");
         keywordList.innerHTML = "";
-        for (let keyword of keywords) {
+        for (let index = 0; index < keywords.length; index++) {
             const li = document.createElement("li");
             li.className = "item";
-            li.innerHTML = `${keyword} <span class="delete-icon"><i class="fas fa-trash"></i></span>`; // TODO: Implement delete logic
+            li.innerHTML = `${keywords[index]} <span class="delete-icon" data-id="${index}"><i class="fas fa-trash"></i></span>`;
             keywordList.appendChild(li);
         }
+
+        const itemList = document.querySelector('.item-list');
+
+        itemList.addEventListener('click', (event) => {
+            if (event.target.closest('.delete-icon')) {
+                const icon = event.target.closest('.delete-icon');
+                const id = icon.getAttribute('data-id');
+                keywords.splice(id, 1);
+                chrome.storage.sync.set({ keywords }, () => {
+                    displayKeywords();
+                });
+            }
+        });
     });
 }
 
-document.addEventListener("DOMContentLoaded", displayKeywords);
+document.addEventListener("DOMContentLoaded", function () {
+    displayKeywords();
+});
