@@ -17,7 +17,8 @@ function displayKeywords() {
         keywordList.innerHTML = "";
         for (let keyword of keywords) {
             const li = document.createElement("li");
-            li.textContent = keyword;
+            li.className = "item";
+            li.innerHTML = `${keyword} <span class="delete-icon"><i class="fas fa-trash"></i></span>`; // TODO: Implement delete logic
             keywordList.appendChild(li);
         }
     });
