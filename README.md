@@ -46,6 +46,16 @@ KeywordContentBlocker is a Chrome extension that blocks specific content on webp
 4. Push to the branch (`git push origin feature/YourFeature`).
 5. Open a Pull Request.
 
+## Changelog
+
+### [1.1.0] - 2024-06-26
+#### Added
+- User interface improvements for better user experience.
+
+### [1.0.0] - 2024-06-25
+#### Added
+- Initial release with basic content blocking features.
+ 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
