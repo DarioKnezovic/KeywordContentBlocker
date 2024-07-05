@@ -1,9 +1,11 @@
 {
   "manifest_version": 3,
   "name": "Content Blocker",
-  "version": "1.1.0",
-  "description": "Blocks content based on keywords.",
+  "version": "1.2.1",
+  "description": "Block specific content on webpages based on user-defined keywords.",
   "permissions": [
+    "activeTab",
+    "tabs",
     "activeTab",
     "storage"
   ],
