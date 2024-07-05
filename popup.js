@@ -13,19 +13,9 @@ document.getElementById("addKeyword").addEventListener("click", () => {
 
 function showContentBasedOnKeyword(keyword) {
     (async () => {
-        const [tab] = await chrome.tabs.query({active: true, lastFocusedWindow: true});
-        const response = await chrome.tabs.sendMessage(tab.id, { keyword });
-        // do something with response here, not outside the function
-        console.log(response);
+        const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+        await chrome.tabs.sendMessage(tab.id, { keyword });
     })();
-    const elements = document.body.getElementsByTagName("article");
-    console.log(elements);
-    for (let element of elements) {
-        if (element.textContent.toLowerCase().includes(keyword)) {
-            element.style.display = "";
-            break;
-        }
-    }
 }
 
 function displayKeywords() {
@@ -52,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const id = icon.getAttribute('data-id');
             chrome.storage.sync.get('keywords', ({ keywords }) => {
                 if (keywords && id !== null && keywords[id] !== undefined) {
-                    console.log('Keyword:', keywords[id]);
                     showContentBasedOnKeyword(keywords[id]);
                     keywords.splice(id, 1);
                     chrome.storage.sync.set({ keywords }, () => {

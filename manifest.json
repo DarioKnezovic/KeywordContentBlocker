@@ -5,6 +5,8 @@
   "description": "Block specific content on webpages based on user-defined keywords.",
   "permissions": [
     "activeTab",
+    "tabs",
+    "activeTab",
     "storage"
   ],
   "background": {
