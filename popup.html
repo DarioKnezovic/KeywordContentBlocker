@@ -11,18 +11,31 @@
   <link rel="stylesheet" href="popup.css" />
 </head>
 <body>
-<div class="header flex flex-row">
+<!--<div class="header flex flex-row">
   <h3>Content Blocker</h3>
-  <!--<label class="switch"> TODO: We should store value if Content blocker is ON/OFF
+  <label class="switch"> TODO: We should store value if Content blocker is ON/OFF
     <input type="checkbox">
     <span class="slider round"></span>
-  </label>-->
+  </label>
 </div>
 <div class="form flex flex-row">
   <input class="input" type="text" id="keyword" placeholder="Enter keyword">
   <button class="button" id="addKeyword">Add Keyword</button>
 </div>
-<ul class="item-list" id="keywordList"></ul>
+<ul class="item-list" id="keywordList"></ul>-->
+<div class="container">
+  <header>
+    <h1>Keyword Blocker</h1>
+  </header>
+  <div class="input-area">
+    <input type="text" id="keyword" placeholder="Add new keyword">
+    <button id="addKeyword">Add</button>
+  </div>
+  <ul id="keywordList" class="item-list"></ul>
+  <footer>
+    <p>Manage your blocked keywords</p>
+  </footer>
+</div>
 
 <script src="popup.js"></script>
 </body>
