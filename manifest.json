@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Content Blocker",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Block specific content on webpages based on user-defined keywords.",
   "permissions": [
     "activeTab",
@@ -12,13 +12,14 @@
   "background": {
     "service_worker": "background.js"
   },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
   "action": {
     "default_popup": "popup.html",
-    "default_icon": {
-      "16": "icons/icon16.svg",
-      "48": "icons/icon48.svg",
-      "128": "icons/icon128.svg"
-    }
+    "default_icon": "icons/icon-48.png"
   },
   "content_scripts": [
     {

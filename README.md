@@ -48,6 +48,10 @@ KeywordContentBlocker is a Chrome extension that blocks specific content on webp
 
 ## Changelog
 
+### [1.2.2] - 2024-07-08
+#### Fixed
+- UI/UX style and updated icons
+
 ### [1.2.1] - 2024-07-05
 #### Fixed
 - Improved the logic to immediately display articles containing a keyword when it is removed from the blocked keywords list.
